@@ -1,0 +1,203 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.acortador {
+    transform: translateY(-9.1rem);
+
+    @include m.tablet { 
+        transform: translateY(-8.4rem);
+    }
+
+    &__bg {
+        background-color: v.$darkViolet;
+        background-image: url(../img/bg-shorten-mobile.svg);
+        background-position: right top;
+        background-repeat: no-repeat;
+        padding: 2.4rem;
+        border-radius: 1rem;
+        margin-bottom: 2.4rem;
+
+        @include m.tablet { 
+            background-image: url(../img/bg-shorten-desktop.svg);
+            background-position: center;
+            padding: 5.2rem 6.4rem;
+            height: 16.8rem;
+        }
+    }
+
+    &__grid {
+        @include m.grid(1, 2.4rem);
+
+        @include m.tablet { 
+            gap: 1.6rem;
+        }
+    }
+
+    &__link {
+        background-color: v.$white;
+        border-radius: .5rem;
+        padding: .6rem 1.6rem 1.6rem;
+
+        @include m.tablet { 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.6rem 3.2rem;
+        }
+    }
+
+    &__link-original,
+    &__link-acortado {
+        color: v.$veryDarkViolet;
+        font-size: 1.5rem;
+        line-height: 3.6rem;
+        padding-bottom: .6rem;
+        border-bottom: .1rem solid v.$grayishViolet;
+
+        @include m.tablet { 
+            border: none;
+            padding: 0;
+        }
+
+        @include m.tablet-xl { 
+            font-size: 2rem;
+        }
+    }
+
+    &__link-acortado-c {
+        padding-top: .6rem;
+
+        @include m.tablet { 
+            padding: 0;
+            display: flex;
+            align-items: center;
+            gap: 2.4rem;
+        }
+    }
+
+    &__link-acortado {
+        padding: 0;
+        border: none;
+        color: v.$cyan;
+        margin-bottom: .8rem;
+
+        &:focus {
+            outline: none;
+        }
+
+        @include m.tablet { 
+            margin: 0;
+        }
+    }
+
+    &__btn-copiar {
+        @include m.boton(v.$cyan, v.$white, v.$cyanLight);
+        height: 4rem;
+        border-radius: .5rem;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+
+        @include m.tablet { 
+            width: 10.3rem;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+        }
+    }
+
+    &__btn-copiar--copiado {
+        background-color: v.$darkViolet;
+
+        &:hover {
+            background-color: v.$darkViolet;
+        }
+    }
+
+    &__btn-eliminar {
+        height: 4rem;
+        background-image: url(../img/trash_icon.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 4rem;
+        margin: 0 auto;
+        display: block;
+        margin-top: 2rem;
+
+        @include m.tablet { 
+            margin-top: 0;
+        }
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    @include m.tablet { 
+        flex-direction: row;
+        gap: 2.4rem;
+    }
+
+    &__input-c {
+        display: flex;
+        flex-direction: column;
+        gap: .4rem;
+
+        @include m.tablet { 
+            flex: 1;
+            gap: .8rem;
+        }
+    }
+
+    &__input {
+        height: 4.8rem;
+        border-radius: .5rem;
+        padding: .6rem 1.6rem;
+
+        &.form__input--activo {
+            border: .3rem solid v.$red;
+
+            &::placeholder {
+                color: v.$red;
+                opacity: 0.5;
+            }
+        }
+
+        &::placeholder {
+            font-size: 1.6rem;
+
+            @include m.tablet { 
+                font-size: 2rem;
+                line-height: 3.6rem;
+            }
+        }
+
+        @include m.tablet { 
+            height: 6.4rem;
+            padding: 1.4rem 3.2rem;
+        }
+    }
+
+    &__error {
+        color: v.$red;
+        font-style: italic;
+        font-size: 1.2rem;
+        line-height: 1.8rem;
+
+        @include m.tablet { 
+            font-size: 1.6rem;
+        }
+    }
+
+    &__submit {
+        @include m.boton(v.$cyan, v.$white, v.$cyanLight);
+        border-radius: .5rem;
+
+        @include m.tablet { 
+            width: 18.8rem;
+            height: 6.4rem;
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.header {
+    background-color: v.$white;
+
+    &__barra {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 0 0;
+
+        @include m.tablet { 
+            gap: 4.54rem;
+            padding-top: 4.8rem;
+        }
+    }
+
+    &__btn {
+        width: 3.2rem;
+        height: 2.4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &.activo {
+
+            span {
+
+                &:nth-child(1) {
+                    transform: rotate(45deg) translate(7px, 7px);
+                }
+
+                &:nth-child(2) {
+                    opacity: 0;
+                }
+
+                &:nth-child(3) {
+                    transform: rotate(-45deg) translate(7px, -7px);
+                }
+            }
+        }
+
+        @include m.tablet { 
+            display: none;
+        }
+    }
+
+    &__span {
+        width: 3.2rem;
+        height: .4rem;
+        background-color: v.$grayishViolet;
+        border-radius: 1rem;
+        transition: all .3s;
+    }
+}
+
+.nav-c {
+    background-color: v.$darkViolet;
+    position: fixed;
+    top: 9.6rem;
+    left: 2.4rem;
+    right: 2.4rem;
+    padding: 4rem 2.4rem;
+    border-radius: 1rem;
+    transform: translateX(110%);
+    transition: all .3s;
+
+    &.activo {
+        transform: translateX(0%);
+    }
+
+    @include m.tablet { 
+        position: initial;
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        background-color: transparent;
+        transform: translateX(0%);
+    }
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+
+        @include m.tablet { 
+            flex-direction: row;
+        }
+
+        &:first-of-type {
+            padding-bottom: 3rem;
+            border-bottom: .1rem solid v.$grayishViolet;
+
+            @include m.tablet { 
+                padding: 0;
+                border: none;
+            }
+        }
+
+        &:last-of-type {
+            margin-top: 3.2rem;
+
+            @include m.tablet { 
+                margin: 0;
+            }
+        }
+    }
+
+    &__enlace {
+        @include m.tablet { 
+            color: v.$grayishViolet;
+            transition: color .3s;
+
+            &:hover {
+                color: v.$veryDarkBlue;
+            }
+        }
+    }
+
+    &__enlace--btn {
+        @include m.boton(v.$cyan, v.$white, v.$cyanLight);  
+        
+        @include m.tablet { 
+            &:hover {
+                color: v.$white;
+            }
+        }
+    }
+}

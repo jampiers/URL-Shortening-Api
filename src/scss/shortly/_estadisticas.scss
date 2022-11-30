@@ -1,0 +1,124 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.estadisticas {
+    margin-bottom: 8rem;
+
+    @include m.desktop { 
+        margin-bottom: 20.8rem;
+    }
+
+    &__titulo-c {
+        max-width: 54rem;
+        text-align: center;
+        margin: 0 auto 9.2rem;
+    }
+
+    &__titulo {
+        margin-bottom: 1.6rem;
+    }
+
+    &__texto {
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+
+        @include m.tablet { 
+            font-size: 1.8rem;
+            line-height: 3.2rem;
+        }
+    }
+
+    &__grid {
+        @include m.grid(1, 9.2rem);
+        position: relative;
+        max-width: 54rem;
+        margin: 0 auto;
+
+        &::before {
+            content: '';
+            background-color: v.$cyan;
+            height: 100%;
+            width: .8rem;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include m.desktop { 
+                width: 100%;
+                height: .8rem;
+                left: 0;
+                transform: translateX(0%);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        @include m.desktop { 
+            max-width: 100%;
+            @include m.grid(3, 3rem);
+        }
+    }
+}
+
+.estadistica {
+    text-align: center;
+    background-color: v.$white;
+    border-radius: .5rem;
+    padding: 7.7rem 3.1rem 4.1rem;
+    position: relative;
+
+    @include m.desktop { 
+        text-align: left;
+    }   
+
+    &::before {
+        content: '';
+        width: 8.8rem;
+        height: 8.8rem;
+        background-image: url(../img/icon-brand-recognition.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: v.$darkViolet;
+        position: absolute;
+        top: -4.4rem;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+
+        @include m.desktop { 
+            left: 3.2rem;
+            transform: translateX(0%);
+        }
+    }
+
+    &:nth-child(2) {
+
+        &::before {
+            background-image: url(../img/icon-detailed-records.svg);
+        }
+
+        @include m.desktop { 
+            transform: translateY(4.4rem);
+        }
+    }
+
+    &:nth-child(3) {
+
+        &::before {
+            background-image: url(../img/icon-fully-customizable.svg);
+        }
+
+        @include m.desktop { 
+            transform: translateY(8.8rem);
+        }
+    }
+
+    h3 {
+        margin-bottom: 1.2rem;
+    }
+
+    &__texto {
+        font-size: 1.5rem;
+        line-height: 2.6rem;
+    }
+}

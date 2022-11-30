@@ -1,0 +1,66 @@
+@use 'variables' as v; 
+
+/** Media Queries **/
+@mixin smartphone {
+    @media (min-width: v.$smartphone) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin tablet-xl {
+    @media (min-width: v.$tablet-xl) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin desktop-xl {
+    @media (min-width: v.$desktop-xl) {
+        @content;
+    }
+}
+
+
+@mixin boton($bgColor, $textColor, $bgColorHover) {
+    background-color: $bgColor;
+    color: $textColor;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    width: 100%;
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2.8rem;
+    transition-property: background-color;
+    transition-duration: .3s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $bgColorHover;
+    }
+
+    @include tablet { 
+        height: 4rem;
+        width: 10.5rem;
+    }
+}
+
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}

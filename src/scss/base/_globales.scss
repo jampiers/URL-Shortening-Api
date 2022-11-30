@@ -1,0 +1,137 @@
+@use 'variables' as v; 
+@use 'mixins' as m; 
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+p {
+    margin: 0;
+}
+  
+body {
+    font-family: v.$font;
+    font-size: 1.8rem;
+    color: v.$grayishViolet;
+    line-height: 3rem;
+    letter-spacing: 0.012rem;
+    overflow-x: hidden;
+    background-color: #EFF1F7;;
+
+    @include m.tablet-xl { 
+        font-size: 2.2rem;
+        line-height: 3.6rem;
+        letter-spacing: 0.015rem;
+    }
+
+    &.no-scroll {
+        overflow: hidden;
+
+        @include m.tablet-xl { 
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+    }
+}
+
+[class$="__contenedor"] {
+    padding: 0 2.4rem;
+    max-width: 111rem;
+    margin: 0 auto;
+
+    @include m.tablet { 
+        padding: 0 3.2rem;
+    }
+
+    @include m.desktop { 
+        padding: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    color: v.$white;
+
+    @include m.tablet-xl { 
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+    }
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-family: v.$font;
+    color: v.$veryDarkBlue;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 4.2rem;
+    line-height: 4.8rem;
+    letter-spacing: -0.105rem;
+
+    @include m.tablet-xl { 
+        font-size: 8rem;
+        line-height: 9rem;
+        letter-spacing: -0.20rem;
+    }
+}
+
+h2 {
+    font-size: 2.8rem;
+    line-height: 4.8rem;
+    letter-spacing: -0.07px;
+
+    @include m.tablet-xl { 
+        font-size: 4rem;
+        letter-spacing: -0.10px;
+        
+    }
+}
+
+h3 {
+    font-size: 2.2rem;
+    line-height: 3.3rem;
+}
+
+button {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+        line-height: 0;
+    }
+}
+
+input {
+    border: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+

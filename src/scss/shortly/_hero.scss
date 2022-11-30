@@ -1,0 +1,108 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.hero {
+    padding-top: 3rem;
+    padding-bottom: 16.8rem;
+    background-color: v.$white;
+
+    @include m.tablet-xl { 
+        &::before {
+            content: "";
+            width: 62rem;
+            height: 43rem;
+            background-image: url(../img/illustration-working.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: absolute;
+            top: 17.6rem;
+            right: -17.5rem;
+
+            @include m.desktop { 
+                top: 16.6rem;
+                width: 66rem;
+                height: 48.2rem;
+            }
+
+            @include m.desktop-xl { 
+                width: 73.3rem;
+                right: -12.3rem;
+            }
+        }
+    }
+
+    @include m.tablet-xl { 
+        padding-top: 8.9rem;
+        padding-bottom: 18.6rem;
+    }
+
+    @include m.desktop { 
+        padding-top: 13.9rem;
+        padding-bottom: 23.04rem;
+    }
+
+    &__imagen {
+        object-position: 4rem;
+        margin-bottom: 3.7rem;
+
+        @include m.smartphone { 
+            width: 43rem;
+            margin: 0 auto 3.7rem;
+            object-position: unset;
+        }
+
+        @include m.tablet { 
+            margin: 5rem auto;
+        }
+
+        @include m.tablet-xl { 
+            display: none;
+        }
+    }
+
+    &__contenido {
+        text-align: center;
+
+        @include m.smartphone { 
+            width: 40rem;
+            margin: 0 auto;
+        }
+
+        @include m.tablet-xl {
+            text-align: left;
+            margin: 0;
+            text-align: left;
+            width: 50rem;
+        }
+
+        @include m.desktop { 
+            width: 56.5rem;
+        }
+    }
+
+    &__texto {
+        margin: 1.5rem 0 3.2rem;
+
+        @include m.tablet-xl { 
+            margin: 0.5rem 0 3.8rem;
+        }
+    }
+
+    &__get-started {
+        @include m.boton(v.$cyan, v.$white, v.$cyanLight);
+        width: 19.7rem;
+        height: 5.6rem;
+        margin: 0 auto;
+
+        @include m.tablet { 
+            width: 19.7rem;
+            height: 5.6rem;
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+
+        @include m.tablet-xl { 
+            margin: 0;
+        }
+    }
+}

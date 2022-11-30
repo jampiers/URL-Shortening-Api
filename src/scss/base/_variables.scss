@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
+
+// Fuentes
+$font: 'Poppins', sans-serif;
+
+// Tamaño de Media Queries
+$smartphone: 480px;
+$tablet: 768px;
+$tablet-xl: 992px;
+$desktop: 1190px;
+$desktop-xl: 1400px;
+
+// Colores
+$cyan: hsl(180, 66%, 49%);
+$cyanLight: hsla(180, 56%, 75%, 1);
+$darkViolet: hsl(257, 27%, 26%);
+$red: hsl(0, 87%, 67%);
+$Gray: hsl(0, 0%, 75%);
+$grayishViolet: hsl(257, 7%, 63%);
+$veryDarkBlue: hsl(255, 11%, 22%);
+$veryDarkViolet: hsl(260, 8%, 14%);
+$white: #fff;
+$black: #000;

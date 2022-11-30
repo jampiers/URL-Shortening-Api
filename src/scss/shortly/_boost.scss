@@ -1,0 +1,45 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.boost {
+    background-color: v.$darkViolet;
+    background-image: url(../img/bg-boost-mobile.svg);
+    background-repeat: no-repeat;
+    background-position: right top;
+    height: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include m.tablet { 
+        background-image: url(../img/bg-boost-desktop.svg);
+        height: 25rem;
+    }
+
+    &__contenido {
+        text-align: center;
+    }
+
+    &__heading {
+        color: v.$white;
+        margin-bottom: 1.6rem;
+
+        @include m.tablet { 
+            margin-bottom: 3.2rem;
+        }
+    }
+
+    &__btn {
+        @include m.boton(v.$cyan, v.$white, v.$cyanLight);
+        width: 19.7rem;
+        height: 5.6rem;
+        font-size: 2rem;
+        line-height: 3rem;
+        margin: 0 auto;
+
+        @include m.tablet { 
+            width: 19.7rem;
+            height: 5.6rem;
+        }
+    }
+}
